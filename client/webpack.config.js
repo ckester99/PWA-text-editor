@@ -22,10 +22,30 @@ module.exports = () => {
                 title: "Client Server",
                 template: "./index.html",
             }),
+            new InjectManifest({
+                swSrc: "./src-sw.js",
+                swDest: "service-worker.js",
+            }),
         ],
 
         module: {
-            rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
+            rules: [
+                { test: /\.css$/, use: ["style-loader", "css-loader"] },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: "asset/resource",
+                },
+                {
+                    test: /\.m?js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: "babel-loader",
+                        options: {
+                            presets: ["@babel/preset-env"],
+                        },
+                    },
+                },
+            ],
         },
     };
 };
