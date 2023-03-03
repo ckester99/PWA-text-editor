@@ -2,7 +2,6 @@ import { Workbox } from "workbox-window";
 import Editor from "./editor";
 import "./database";
 import "../css/style.css";
-import "../images/logo.png";
 import "./install.js";
 
 const main = document.querySelector("#main");
