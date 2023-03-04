@@ -4,6 +4,8 @@
 
 I built this project to practice building PWAs without react.
 
+## [Link to Deployed Application](https://pwa-text-editor-ck.herokuapp.com/)
+
 ## Functional Description
 
 PWA Text editor is a progressive web app that uses codemirror's text editor library.
